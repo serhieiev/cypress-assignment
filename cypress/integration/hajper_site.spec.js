@@ -1,15 +1,19 @@
 describe("www.hajper.com test", () => {
-  it('Visits the site, check the menu items and logo', function() {
+  it('Visits the site', function() {
     //Visit the site (no assertion is needed cause it's done by cy.visit() underthehood)
-    cy.visit("/");
-    //Check the buttons in Regulation Header are visible in the header
+    cy.visit("/")
+  });
+
+  it('Check the buttons in Regulation Header are visible in the header', function() {
     cy.get('[data-at="regulation-header-spel-paus"]').should('be.visible')
     cy.get('[data-at="regulation-header-responsible-gaming"]').should('be.visible')
     cy.get('[data-at="regulation-header-self-test"]').should('be.visible')
-    //Check Spel inspektionen logo is available in the Footer
+  });
+
+  it('Check Spel inspektionen logo is available in the Footer', function() {
     cy.get('[data-at="spelinspektionen-logo"]')
     .should('have.css', 'background', 'rgba(0, 0, 0, 0) '
-    +'url("https://d3eg6wi5fpm57g.cloudfront.net/@komigen/mobile-frontend@5609-ba60/assets/spelinspektionen-licence.svg") '
+    +'url("https://d3eg6wi5fpm57g.cloudfront.net/@komigen/mobile-frontend@5650-d06b/assets/spelinspektionen-licence.svg") '
     +'no-repeat scroll 0% 0% / auto padding-box border-box')
   });
 
